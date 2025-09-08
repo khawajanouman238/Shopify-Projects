@@ -1,0 +1,1850 @@
+<style>
+.desktop-header {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.desktop-header.hide {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.desktop-header.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.guerlain-header {
+  font-family: 'Montserat', Arial, sans-serif;
+}
+
+.guerlain-header * {
+  box-sizing: border-box;
+}
+
+/* Updated desktop styles with luxury design elements */
+/* Desktop Styles */
+.desktop-header {
+  background: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+  position: fixed !important;
+  width: 100%;
+  top: 0; /* Position below 38px announcement bar */
+  z-index: 9999;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.desktop-header-top {
+  padding: 12px 0;
+  border-bottom: 1px solid #f5f5f5;
+  background: #fafafa;
+}
+
+.desktop-header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+}
+
+.desktop-pages-nav {
+  flex: 1;
+}
+
+.desktop-pages-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+.desktop-pages-link:hover {
+  color: #000;
+}
+
+.language-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.language-toggle {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 300;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.language-toggle:hover {
+  color: #000;
+}
+
+.language-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  min-width: 140px;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border-radius: 2px;
+}
+
+.language-selector:hover .language-dropdown {
+  display: block;
+}
+
+.language-option {
+  display: block;
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 300;
+  transition: background-color 0.3s ease;
+}
+
+.language-option:hover {
+  background: #f8f8f8;
+  color: #000;
+}
+
+.desktop-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: #000;
+}
+
+.desktop-logo img {
+  max-height: 45px;
+  width: auto;
+  display: block;
+}
+
+.desktop-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-input {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+  width: 220px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: transparent;
+  font-weight: 300;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-bottom-color: #000;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.search-button:hover {
+  opacity: 0.7;
+}
+
+.search-icon, .account-icon {
+  width: 18px;
+  height: 18px;
+  color: #333;
+}
+
+.account-link {
+  padding: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.account-link:hover {
+  opacity: 0.7;
+}
+
+.desktop-header-bottom {
+  padding: 25px 0;
+  background: #ffffff;
+}
+
+.desktop-bottom-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 0 40px;
+}
+
+.desktop-nav-menu {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 50px;
+}
+
+.desktop-nav-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 10px 0;
+}
+
+.desktop-nav-link:hover {
+  color: #666;
+}
+
+.desktop-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: #000;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.desktop-nav-link:hover::after {
+  width: 100%;
+}
+
+/* Updated mega menu with luxury styling and proper positioning */
+/* Mega menu container */
+.desktop-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 80px); /* 80px distance from menu */
+  left: 0;
+  right: 0;
+  width: 100%; /* Full width */
+  background: #ffffff;
+  border-top: 1px solid #f0f0f0;
+  z-index: 99999;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.desktop-menu.active {
+  display: block;
+  padding-top:20px;
+}
+
+.desktop-menu-container {
+  width: 100%; /* Full width container */
+  margin: 0;
+  padding: 20px 80px; /* 40px top/bottom, 80px left/right */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Panels */
+.mega-panel {
+  display: none;
+}
+
+.mega-panel.active {
+  display: block;
+}
+
+/* Grid layouts */
+.mega-grid {
+  display: grid;
+  gap: 30px;
+  align-items: start;
+}
+.mega-grid--duftkerzen { grid-template-columns: 300px repeat(4, 200px); } /* 6 cols */
+
+
+/* Pflege → 4 columns */
+.mega-grid--pflege {
+  grid-template-columns: 300px repeat(3, 300px);
+}
+.mega-grid--geschenke {
+  grid-template-columns: 300px repeat(3, 300px);
+}
+.mega-grid--raumdufte {
+  grid-template-columns: 300px repeat(4, 200px); /* featured + 3 columns */
+}
+/* Entdecken (example: featured + 4 columns) */
+.mega-grid--entdecken {
+  grid-template-columns: 300px repeat(5, 150px);
+}
+
+/* B2B Professionals (example: featured + 6 columns) */
+.mega-grid--b2b-professionals {
+  grid-template-columns: 300px repeat(4, 270px);
+}
+.mega-grid--sentrio {
+  grid-template-columns: 300px repeat(4, 200px);
+}
+
+
+.mega-col-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin: 0 0 0px;
+  color: #000;
+  padding-bottom: 8px;
+}
+.mega-col-title2 {
+  font-size: 12px;
+  text-transform: uppercase !important;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin: 0 0 0px;
+  color: #000;
+  
+  padding-bottom: 8px;
+}
+.mega-link {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  font-size: 13px;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.mega-link:hover {
+  color: #000;
+  padding-left: 5px;
+}
+
+.mega-featured {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mega-featured img {
+  width: 150px;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+}
+
+.mega-desc {
+  font-size: 13px;
+  font-weight: 300;
+  color: #000;
+  line-height: 1.6;
+  text-transform: capitalize !important;
+  letter-spacing: 0.3px;
+}
+
+.mega-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  transition: opacity 0.3s ease;
+}
+
+.mega-close-btn:hover {
+  opacity: 0.7;
+}
+
+.mega-close-wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.close-icon {
+  width: 20px;
+  height: 20px;
+  color: #333;
+}
+
+/* Updated mobile styles with luxury design elements */
+/* Mobile Styles */
+.mobile-header {
+  display: none;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transform: translateY(0);
+  animation: fadeDown 1s ease-out forwards;
+  overflow-x: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+@keyframes fadeDown {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-header.header-hidden {
+  transform: translateY(-100%);
+}
+
+@media (max-width: 768px) {
+  body { padding-top: 0px; } /* Adjusted for announcement bar + header */
+}
+
+.mobile-header-top {
+  padding: 15px 25px;
+  border-bottom: 1px solid #f5f5f5;
+  background: #fafafa;
+}
+
+.mobile-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.mobile-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #000;
+}
+
+.mobile-logo img {
+  max-height: 35px;
+  width: auto;
+  display: block;
+}
+
+.mobile-account-link {
+  padding: 10px;
+}
+
+.mobile-icon svg {
+  width: 18px;
+  height: 18px;
+  color: #333;
+}
+
+.mobile-header-bottom {
+  padding: 15px 25px;
+  background: #ffffff;
+}
+
+.mobile-search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.mobile-search-input {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 12px 0;
+  width: 100%;
+  max-width: 280px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: transparent;
+  font-weight: 300;
+}
+
+.mobile-search-input:focus {
+  outline: none;
+  border-bottom-color: #000;
+}
+
+.mobile-search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
+}
+
+.mobile-menu-title {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #000;
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav-item {
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.mobile-nav-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  color: #000;
+  text-decoration: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+  background: #f8f8f8;
+}
+
+.mobile-nav-link.no-arrow {
+  justify-content: flex-start;
+}
+
+.mobile-arrow-icon {
+  width: 14px;
+  height: 14px;
+  color: #666;
+  transition: transform 0.3s ease;
+}
+
+.mobile-nav-link.active .mobile-arrow-icon {
+  transform: rotate(90deg);
+}
+
+/* Mobile Dropdown Styles */
+.mobile-dropdown {
+  display: none;
+  background: #f8f8f8;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-dropdown.active {
+  display: block;
+}
+
+.mobile-dropdown-header {
+  padding: 25px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+  background: #ffffff;
+}
+
+.mobile-dropdown-title {
+  font-size: 15px;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #000;
+  margin: 0 0 20px 0;
+}
+
+.mobile-dropdown-subtitle {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #000;
+  margin: 20px 0 15px 0;
+}
+
+.mobile-dropdown-image {
+  width: 150px;
+  max-width: 150px;
+  height: auto;
+  margin: 0 auto 0px;
+  display: block;
+  border-radius: 2px;
+  align-items:left;
+}
+
+.mobile-dropdown-description {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #666;
+  margin: 20px 0 25px 0;
+  font-weight: 600;
+  text-align:left !important;
+  color:#000;
+}
+
+.mobile-dropdown-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-weight:600;
+}
+
+.mobile-dropdown-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+  font-weight: 600;
+}
+
+.mobile-dropdown-link:hover {
+  color: #000;
+}
+
+.mobile-dropdown-columns {
+  padding: 25px;
+  display: none;
+}
+
+.mobile-dropdown-column {
+  margin-bottom: 20px;
+}
+
+.mobile-dropdown-column:last-child {
+  margin-bottom: 0;
+}
+
+.mobile-dropdown-column-title {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #000;
+  margin: 0 0 15px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-dropdown-column-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-icons-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 25px;
+  background: #f8f8f8;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-icon-item:hover {
+  opacity: 0.7;
+}
+
+.mobile-icon-item svg {
+  width: 22px;
+  height: 22px;
+  color: #333;
+}
+
+/* Icons */
+.hamburger {
+  width: 24px;
+  height: 18px;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: #333;
+  margin-bottom: 4px;
+  transition: 0.3s ease;
+}
+
+.hamburger span:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .desktop-header { display: none; }
+  .mobile-header { display: block; }
+  body { padding-top: 158px; }
+  .utility-bar__grid.page-width { display: none; }
+  .overlay-feature {
+    padding: 0px 20px;
+}
+
+li a{
+color:#000 !important;
+text-decoration:none !important;
+padding-left:20px;
+font-size:13px;
+font-weight:400;
+padding-top:20px !important;
+}
+}
+@media (min-width: 769px) {
+  .mobile-header { display: none !important; }
+  body { padding-top: 158px; } /* Adjusted for announcement bar + header */
+}
+
+
+/* Guerlain-like mobile overlay */
+.overlay-mobile { background:#fff; min-height:100vh; display:flex; flex-direction:column; }
+.overlay-mobile__header { display:flex; align-items:center; justify-content:space-between; padding:18px 22px; border-bottom:1px solid #eee; background:#fafafa; }
+.overlay-mobile__title { font-size:14px; letter-spacing:2px; text-transform:uppercase; }
+.overlay-mobile__close { background:none; border:none; font-size:18px; cursor:pointer; }
+
+.overlay-level { display:none; }
+.overlay-level.active { display:block; }
+
+.overlay-bar { display:flex; align-items:center; gap:10px; padding:16px 22px; border-bottom:1px solid #f0f0f0; background:#fff; position:sticky; top:0; z-index:2; }
+.overlay-bar__title { font-size:13px; letter-spacing:1.5px; text-transform:uppercase; font-weight:600; }
+.overlay-back { background:none; border:none; font-size:16px; cursor:pointer; }
+
+.overlay-list, .overlay-links { list-style:none; padding:0; margin:0; }
+.overlay-list__item { border-bottom:1px solid #f8f8f8; }
+.overlay-link { display:flex; align-items:center; justify-content:space-between; padding:18px 22px; text-decoration:none; color:#000; font-size:13px; text-transform:uppercase; letter-spacing:1.5px; font-weight:600; }
+.overlay-link:hover { background:#f8f8f8; }
+.overlay-arrow { width:14px; height:14px; color:#666; }
+
+.overlay-subtitle { padding:18px 22px 8px; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; font-weight:600; color:#000; }
+.overlay-link--leaf { display:block; padding:12px 22px; text-decoration:none; color:#000; font-size:13px; }
+.overlay-link--leaf:hover { background:#f8f8f8; }
+.overlay-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.overlay-bar-left {
+  display: flex;
+  align-items: center;
+}
+
+.overlay-back {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.overlay-bar__title {
+  margin-left: 10px; /* title next to back arrow */
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Show dropdown when hovering nav link OR dropdown itself */
+.desktop-nav-menu li:hover ~ #desktopMenu,
+#desktopMenu:hover {
+  display: block;
+}
+
+.desktop-menu {
+  display: none;
+  position: absolute;
+    /* attach right below header */
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 9999;
+}
+
+
+</style>
+
+<!-- Desktop Header -->
+<header class="guerlain-header">
+  <div class="desktop-header">
+    <div class="desktop-header-top">
+      <div class="desktop-header-container">
+        <div class="desktop-pages-nav">
+          <div style="display:flex; align-items:center; gap:20px;">
+            <div class="language-selector">
+              <button class="language-toggle">
+                {{ section.settings.international_text | default: 'INTERNATIONAL' }} | {{ section.settings.language_code | default: 'EN' }}
+              </button>
+              <div class="language-dropdown">
+                <a href="#" class="language-option">English</a>
+                <a href="#" class="language-option">German</a>
+                <a href="#" class="language-option">French</a>
+              </div>
+            </div>
+            <a href="{{ section.settings.contact_link | default: '/pages/contact' }}" class="desktop-pages-link">{{ section.settings.contact_text | default: 'CONTACT US' }}</a>
+            <a href="{{ section.settings.services_link | default: '/pages/services' }}" class="desktop-pages-link">{{ section.settings.services_text | default: 'SERVICES' }}</a>
+          </div>
+        </div>
+
+        <a href="{{ routes.root_url }}" class="desktop-logo">
+          {% if section.settings.logo_image != blank %}
+            <img src="{{ section.settings.logo_image | image_url: width: 150 }}" alt="{{ section.settings.logo_text | default: shop.name }}" loading="lazy">
+          {% else %}
+            {{ section.settings.logo_text | default: shop.name }}
+          {% endif %}
+        </a>
+
+        <div class="desktop-right">
+          <div class="search-container">
+            <form action="{{ routes.search_url }}" method="get" style="display:flex; align-items:center; gap:20px;">
+              <input type="search" name="q" placeholder="{{ section.settings.search_placeholder | default: 'SEARCH' }}" class="search-input" value="{{ search.terms | escape }}">
+              <button type="submit" class="search-button">
+                <svg class="search-icon" viewBox="0 0 16 16" fill="none">
+                  <path d="M6.37869 0.877349C9.40901 0.877349 11.8538 3.25182 11.8538 6.19339C11.8538 9.13568 9.40901 11.5094 6.37869 11.5094C3.34837 11.5094 0.9036 9.13568 0.9036 6.19339C0.9036 3.25182 3.34837 0.877349 6.37869 0.877349ZM16.0002 15.3291L11.0037 10.4777C12.1198 9.34203 12.7574 7.84492 12.7574 6.19339C12.7574 2.78717 9.88682 0 6.37869 0C2.87056 0 0 2.78717 0 6.19339C0 9.59962 2.87056 12.3868 6.37869 12.3868C7.8671 12.3868 9.19575 11.9228 10.2591 11.0967L15.3091 16L16.0002 15.3291Z" fill="currentColor"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+          <a href="{{ routes.account_url }}" class="account-link">
+            <svg class="account-icon" viewBox="0 0 19 22" fill="none">
+              <path d="M11.2778 8.67089C12.7685 7.91139 13.8056 6.32911 13.8056 4.62025C13.8056 2.08861 11.6667 0 9.07407 0C6.48148 0 4.27778 2.02532 4.27778 4.55696C4.27778 6.26582 5.18519 7.72152 6.61111 8.5443C2.85185 9.49367 0 12.7848 0 16.7722V20H0.518519H0.972222H16.5278H17.1759H17.5V16.7722C17.4352 12.9747 14.8426 9.74684 11.2778 8.67089ZM5.25 4.55696C5.25 2.53165 6.93519 0.822785 9.07407 0.822785C11.1481 0.822785 12.8981 2.46835 12.8981 4.55696C12.8981 6.64557 11.213 8.29114 9.07407 8.29114C6.93519 8.29114 5.25 6.64557 5.25 4.55696ZM0.972222 19.0506V16.7722C0.972222 12.5949 4.47222 9.17722 8.75 9.17722C13.0278 9.17722 16.5278 12.5949 16.5278 16.7722V19.0506H0.972222Z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mega dropdown container -->
+        <div class="desktop-menu" id="desktopMenu" aria-hidden="true">
+          <div class="desktop-menu-container" id="megaContainer">
+            
+            {% comment %} Generate mega panels for all 7 menu items {% endcomment %}
+            {% assign menu_groups = 'Entdecken,Duftkerzen,Raumdufte,Pflege,Geschenke,B2B Professionals,Sentrio' | split: ',' %}
+            
+            {% for group in menu_groups %}
+  <div class="mega-panel" id="panel-{{ group }}">
+    <div class="mega-grid mega-grid--{{ group | handleize }}">
+
+                  {% comment %} Featured section {% endcomment %}
+                  {% assign featured = nil %}
+                  {% for b in section.blocks %}
+                    {% if b.type == 'feat' and b.settings.menu_group == group %}
+                      {% assign featured = b %}
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                  
+                  <div class="mega-featured">
+                    {% if featured and featured.settings.primary_heading != blank %}
+                      <div class="mega-col-title">{{ featured.settings.primary_heading }}</div>
+                    {% endif %}
+                    {% if featured and featured.settings.image != blank %}
+                      <img src="{{ featured.settings.image | image_url: width: 150 }}" alt="{{ featured.settings.primary_heading | escape }}">
+                    {% endif %}
+                    {% if featured and featured.settings.desc_text != blank %}
+                      <div class="mega-desc">{{ featured.settings.desc_text }}</div>
+                    {% endif %}
+                    {% if featured and featured.settings.secondary_heading != blank %}
+                      <div class="mega-col-title2">{{ featured.settings.secondary_heading }}</div>
+                    {% endif %}
+                    {% for i in (1..3) %}
+                      {% assign ll = 'link' | append: i | append: '_label' %}
+                      {% assign lu = 'link' | append: i | append: '_url' %}
+                      {% if featured and featured.settings[ll] and featured.settings[lu] %}
+                        <a href="{{ featured.settings[lu] }}" class="mega-link">{{ featured.settings[ll] }}</a>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                  
+                  {% comment %} Column sections {% endcomment %}
+              
+{% assign rendered = 0 %}
+{% for col in section.blocks %}
+  {% if col.type == 'col' and col.settings.menu_group == group %}
+    <div>
+      {% if col.settings.title != blank %}
+        <div class="mega-col-title2">{{ col.settings.title }}</div>
+      {% endif %}
+
+      {% for i in (1..5) %}
+        {% assign tl = 'link' | append: i | append: '_label' %}
+        {% assign tu = 'link' | append: i | append: '_url' %}
+        {% if col.settings[tl] and col.settings[tu] %}
+          <a href="{{ col.settings[tu] }}" class="mega-link">{{ col.settings[tl] }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if col.settings.title2 != blank %}
+        <div class="mega-col-title2" style="margin-top: 20px;">{{ col.settings.title2 }}</div>
+      {% endif %}
+
+      {% for i in (6..7) %}
+        {% assign tl = 'link' | append: i | append: '_label' %}
+        {% assign tu = 'link' | append: i | append: '_url' %}
+        {% if col.settings[tl] and col.settings[tu] %}
+          <a href="{{ col.settings[tu] }}" class="mega-link">{{ col.settings[tl] }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if col.settings.title3 != blank %}
+        <div class="mega-col-title2" style="margin-top: 20px;">{{ col.settings.title3 }}</div>
+      {% endif %}
+      
+      {% for i in (8..10) %}
+        {% assign tl = 'link' | append: i | append: '_label' %}
+        {% assign tu = 'link' | append: i | append: '_url' %}
+        {% if col.settings[tl] and col.settings[tu] %}
+          <a href="{{ col.settings[tu] }}" class="mega-link">{{ col.settings[tl] }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% assign rendered = rendered | plus: 1 %}
+    {% if rendered == 6 %}{% break %}{% endif %}
+  {% endif %}
+{% endfor %}
+
+
+                  
+                 
+                </div>
+              </div>
+
+            {% endfor %}
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second row: main navigation -->
+    <div class="desktop-header-bottom">
+      <div class="desktop-bottom-container">
+        <ul class="desktop-nav-menu" id="desktopNav">
+          <li><a href="{{ section.settings.nav1_url | default: '#' }}" class="desktop-nav-link" data-mega-trigger="Entdecken">{{ section.settings.nav1_label | default: 'ENTDECKEN' }}</a></li>
+          <li><a href="{{ section.settings.nav2_url | default: '#' }}" class="desktop-nav-link" data-mega-trigger="Duftkerzen">{{ section.settings.nav2_label | default: 'DUFTKERZEN' }}</a></li>
+          <li><a href="{{ section.settings.nav3_url | default: '#' }}" class="desktop-nav-link" data-mega-trigger="Raumdufte">{{ section.settings.nav3_label | default: 'RAUMDUFTE' }}</a></li>
+          <li><a href="{{ section.settings.nav4_url | default: '#' }}" class="desktop-nav-link" data-mega-trigger="Pflege">{{ section.settings.nav4_label | default: 'PFLEGE' }}</a></li>
+          <li><a href="{{ section.settings.nav5_url | default: '#' }}" class="desktop-nav-link" data-mega-trigger="Geschenke">{{ section.settings.nav5_label | default: 'GESCHENKE' }}</a></li>
+          <li><a href="{{ section.settings.nav6_url | default: '#' }}" class="desktop-nav-link" data-mega-trigger="B2B Professionals">{{ section.settings.nav6_label | default: 'B2B Professionals' }}</a></li>
+          <li><a href="{{ section.settings.nav7_url | default: '#' }}" class="desktop-nav-link" data-mega-trigger="Sentrio">{{ section.settings.nav7_label | default: 'SENTRIO' }}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Header -->
+<header class="mobile-header" id="mobileHeader">
+  <div class="mobile-header-top">
+    <div class="mobile-header-container">
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+
+      <a href="{{ routes.root_url }}" class="mobile-logo">
+        {% if section.settings.logo_image != blank %}
+          <img src="{{ section.settings.logo_image | image_url: width: 150 }}" alt="{{ section.settings.logo_text | default: shop.name }}" loading="lazy">
+        {% else %}
+          {{ section.settings.logo_text | default: shop.name }}
+        {% endif %}
+      </a>
+
+      <a href="{{ routes.account_url }}" class="mobile-account-link">
+        <div class="mobile-icon">
+          <svg viewBox="0 0 19 22" fill="none">
+            <path d="M11.2778 8.67089C12.7685 7.91139 13.8056 6.32911 13.8056 4.62025C13.8056 2.08861 11.6667 0 9.07407 0C6.48148 0 4.27778 2.02532 4.27778 4.55696C4.27778 6.26582 5.18519 7.72152 6.61111 8.5443C2.85185 9.49367 0 12.7848 0 16.7722V20H0.518519H0.972222H16.5278H17.1759H17.5V16.7722C17.4352 12.9747 14.8426 9.74684 11.2778 8.67089ZM5.25 4.55696C5.25 2.53165 6.93519 0.822785 9.07407 0.822785C11.1481 0.822785 12.8981 2.46835 12.8981 4.55696C12.8981 6.64557 11.213 8.29114 9.07407 8.29114C6.93519 8.29114 5.25 6.64557 5.25 4.55696ZM0.972222 19.0506V16.7722C0.972222 12.5949 4.47222 9.17722 8.75 9.17722C13.0278 9.17722 16.5278 12.5949 16.5278 16.7722V19.0506H0.972222Z" fill="currentColor"/>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="mobile-header-bottom">
+    <div class="mobile-search-container">
+      <form action="{{ routes.search_url }}" method="get" style="display:flex; align-items:center; justify-content:center; gap:20px; width:100%;">
+        <input type="search" name="q" placeholder="{{ section.settings.search_placeholder | default: 'SEARCH' }}" class="mobile-search-input" value="{{ search.terms | escape }}">
+        <button type="submit" class="mobile-search-button">
+          <svg class="search-icon" viewBox="0 0 16 16" fill="none">
+            <path d="M6.37869 0.877349C9.40901 0.877349 11.8538 3.25182 11.8538 6.19339C11.8538 9.13568 9.40901 11.5094 6.37869 11.5094C3.34837 11.5094 0.9036 9.13568 0.9036 6.19339C0.9036 3.25182 3.34837 0.877349 6.37869 0.877349ZM16.0002 15.3291L11.0037 10.4777C12.1198 9.34203 12.7574 7.84492 12.7574 6.19339C12.7574 2.78717 9.88682 0 6.37869 0C2.87056 0 0 2.78717 0 6.19339C0 9.59962 2.87056 12.3868 6.37869 12.3868C7.8671 12.3868 9.19575 11.9228 10.2591 11.0967L15.3091 16L16.0002 15.3291Z" fill="currentColor"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+
+  <!-- UNIVERSAL TOP BAR -->
+  <div class="overlay-bar">
+    <div class="overlay-bar-left">
+      <button type="button" class="overlay-back" id="mobileBackBtn" onclick="handleMobileBack()">‹</button>
+      <span class="overlay-bar__title" id="mobileMenuTitle">MENU</span>
+    </div>
+    <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+      <svg class="close-icon" viewBox="0 0 16 16" fill="none">
+        <path d="M0 15.5L0.7 16.2L8.1 8.8L15.5 16.1V16.2L16.2 15.5L8.9 8.1L16.2 0.8V0.7L15.5 0L8.1 7.4L0.7 0L0 0.7L7.4 8.1L0.1 15.4L0 15.5Z" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- LEVEL 1: Top menu groups -->
+  <div class="overlay-level overlay-level--1 active" id="mobileLevel1">
+    <!-- Icons bar -->
+    <div class="mobile-icons-bar">
+      <div class="mobile-icon-item" onclick="handleMobileSearch()">
+        <!-- search icon -->
+        <svg viewBox="0 0 16 16" fill="none">
+          <path d="M6.3 0.9c3 0 5.5 2.4 5.5 5.3 0 3-2.5 5.3-5.5 5.3S0.9 9.2 0.9 6.2C0.9 3.3 3.3 0.9 6.3 0.9ZM16 15.3l-5-4.9c1.1-1.1 1.7-2.6 1.7-4.1 0-3.4-2.9-6.2-6.4-6.2S0 2.9 0 6.3c0 3.3 2.9 6.2 6.4 6.2 1.6 0 3-0.5 4.1-1.4l5 5L16 15.3Z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="mobile-icon-item" onclick="handleMobileAccount()">
+        <!-- account icon -->
+        <svg viewBox="0 0 19 22" fill="none">
+          <path d="M11.3 8.7c1.5-0.8 2.5-2.4 2.5-4.1C13.8 2.1 11.7 0 9.1 0S4.3 2 4.3 4.6c0 1.7 0.9 3.1 2.3 3.9C2.9 9.5 0 12.8 0 16.8V20h17.5v-3.2c-0.1-3.8-2.7-7-6.2-8.1ZM5.3 4.6c0-2 1.7-3.7 3.8-3.7s3.8 1.6 3.8 3.7-1.7 3.7-3.8 3.7-3.8-1.6-3.8-3.7Z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="mobile-icon-item" onclick="handleMobileLocation()">
+        <!-- location icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 0a5.53 5.53 0 0 0-5.5 5.5C2.5 8.5 8 16 8 16s5.5-7.5 5.5-10.5A5.53 5.53 0 0 0 8 0Zm0 7.5a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"/>
+        </svg>
+      </div>
+    </div>
+
+    <ul class="overlay-list">
+      {% assign menu_groups = 'Entdecken,Duftkerzen,Raumdufte,Pflege,Geschenke,B2B Professionals,Sentrio' | split: ',' %}
+      {% assign mobile_menu_labels = section.settings.nav1_label | append: ',' | append: section.settings.nav2_label | append: ',' | append: section.settings.nav3_label | append: ',' | append: section.settings.nav4_label | append: ',' | append: section.settings.nav5_label | append: ',' | append: section.settings.nav6_label | append: ',' | append: section.settings.nav7_label | split: ',' %}
+      {% assign default_labels = 'ENTDECKEN,DUFTKERZEN,RAUMDUFTE,PFLEGE,GESCHENKE,B2B PROFESSIONALS,SENTRIO' | split: ',' %}
+
+      {% for group in menu_groups %}
+        {% assign idx = forloop.index0 %}
+        {% assign label = mobile_menu_labels[idx] | default: default_labels[idx] %}
+        <li class="overlay-list__item">
+          <a href="#" class="overlay-link" onclick="openMobileLevel2('{{ group }}'); return false;">
+            <span>{{ label }}</span>
+            <svg class="overlay-arrow" viewBox="0 0 12 12" fill="none">
+              <path d="M4.5 2L7.5 6L4.5 10" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- LEVEL 2: Group (all columns including featured as item) -->
+  {% for group in menu_groups %}
+    <div class="overlay-level overlay-level--2" id="mobileLevel2-{{ group | handleize }}">
+      <ul class="overlay-list">
+        {% for block in section.blocks %}
+          {% if block.settings.menu_group == group %}
+            <li class="overlay-list__item">
+              <a href="#" class="overlay-link" onclick="openMobileLevel3('{{ group | handleize }}','{{ block.id }}'); return false;">
+                <span>
+                  {% if block.type == 'feat' %}
+                    {{ block.settings.primary_heading | default: 'Featured' }}
+                  {% elsif block.type == 'col' %}
+                    {{ block.settings.title | default: 'Collection All' }}
+                  {% endif %}
+                </span>
+                <svg class="overlay-arrow" viewBox="0 0 12 12" fill="none">
+                  <path d="M4.5 2L7.5 6L4.5 10" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+
+  <!-- LEVEL 3: Column links OR featured content -->
+  {% for group in menu_groups %}
+    {% for block in section.blocks %}
+      {% if block.settings.menu_group == group %}
+        <div class="overlay-level overlay-level--3" id="mobileLevel3-{{ group | handleize }}-{{ block.id }}">
+          {% if block.type == 'col' %}
+            <ul class="overlay-links">
+              {% for i in (1..10) %}
+                {% assign tl = 'link' | append: i | append: '_label' %}
+                {% assign tu = 'link' | append: i | append: '_url' %}
+                {% if block.settings[tl] and block.settings[tu] %}
+                  <li><a href="{{ block.settings[tu] }}">{{ block.settings[tl] }}</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% elsif block.type == 'feat' %}
+            <div class="overlay-feature">
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | image_url: width: 300 }}" alt="{{ block.settings.primary_heading | escape }}">
+              {% endif %}
+              {% if block.settings.primary_heading != blank %}
+                <h3>{{ block.settings.primary_heading }}</h3>
+              {% endif %}
+              {% if block.settings.desc_text != blank %}
+                <p>{{ block.settings.desc_text }}</p>
+              {% endif %}
+              {% for i in (1..3) %}
+                {% assign ll = 'link' | append: i | append: '_label' %}
+                {% assign lu = 'link' | append: i | append: '_url' %}
+                {% if block.settings[ll] and block.settings[lu] %}
+                  <a href="{{ block.settings[lu] }}">{{ block.settings[ll] }}</a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</div>
+
+
+
+<script>
+let hoverTimer;
+let lastScrollTop = 0;
+let scrollThreshold = 10;
+
+function openMega(key) {
+  const container = document.getElementById('desktopMenu');
+  const panels = container.querySelectorAll('.mega-panel');
+  
+  panels.forEach(p => p.classList.remove('active'));
+  
+  const target = document.getElementById('panel-' + key);
+  if (target) {
+    target.classList.add('active');
+    container.classList.add('active');
+    container.setAttribute('aria-hidden', 'false');
+  }
+}
+
+function closeMega() {
+  const container = document.getElementById('desktopMenu');
+  container.classList.remove('active');
+  container.setAttribute('aria-hidden', 'true');
+}
+
+function toggleMobileMenu() {
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileMenu.classList.toggle('active');
+  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+}
+
+function toggleMobileDropdown(category) {
+  const dropdown = document.getElementById('dropdown-' + category);
+  const link = dropdown.previousElementSibling;
+  
+  // Close all other dropdowns
+  const allDropdowns = document.querySelectorAll('.mobile-dropdown');
+  const allLinks = document.querySelectorAll('.mobile-nav-link');
+  
+  allDropdowns.forEach(d => {
+    if (d !== dropdown) {
+      d.classList.remove('active');
+    }
+  });
+  
+  allLinks.forEach(l => {
+    if (l !== link) {
+      l.classList.remove('active');
+    }
+  });
+  
+  // Toggle current dropdown
+  dropdown.classList.toggle('active');
+  link.classList.toggle('active');
+}
+
+function handleMobileSearch() {
+  toggleMobileMenu();
+  setTimeout(() => {
+    const searchInput = document.querySelector('.mobile-search-input');
+    if (searchInput) {
+      searchInput.focus();
+    }
+  }, 300);
+}
+
+function handleMobileAccount() {
+  window.location.href = '{{ routes.account_url }}';
+}
+
+function handleMobileLocation() {
+  console.log('Location icon clicked');
+}
+
+function handleMobileHeaderScroll() {
+  const mobileHeader = document.getElementById('mobileHeader');
+  if (!mobileHeader) return;
+  
+  const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (window.innerWidth <= 768) {
+    if (Math.abs(currentScrollTop - lastScrollTop) > scrollThreshold) {
+      if (currentScrollTop > lastScrollTop && currentScrollTop > 100) {
+        mobileHeader.classList.add('header-hidden');
+      } else {
+        mobileHeader.classList.remove('header-hidden');
+      }
+      lastScrollTop = currentScrollTop;
+    }
+  } else {
+    mobileHeader.classList.remove('header-hidden');
+  }
+}
+
+// Desktop header scroll functionality
+function handleDesktopHeaderScroll() {
+  const desktopHeader = document.querySelector('.desktop-header');
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (currentScroll > lastScrollTop && currentScroll > 100) {
+    desktopHeader.classList.remove('show');
+    desktopHeader.classList.add('hide');
+  } else {
+    desktopHeader.classList.remove('hide');
+    desktopHeader.classList.add('show');
+  }
+  
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+}
+
+// Initialize everything
+document.addEventListener('DOMContentLoaded', function() {
+  const nav = document.getElementById('desktopNav');
+  const mega = document.getElementById('desktopMenu');
+  
+  if (nav && mega) {
+    nav.querySelectorAll('[data-mega-trigger]').forEach(link => {
+      const key = link.getAttribute('data-mega-trigger');
+      
+      link.addEventListener('mouseenter', () => {
+        clearTimeout(hoverTimer);
+        openMega(key);
+      });
+      
+      link.addEventListener('focus', () => openMega(key));
+    });
+    
+    const leaveAll = () => {
+      clearTimeout(hoverTimer);
+      hoverTimer = setTimeout(closeMega, 150);
+    };
+    
+    const enterAll = () => {
+      clearTimeout(hoverTimer);
+    };
+    
+    nav.addEventListener('mouseleave', leaveAll);
+    mega.addEventListener('mouseenter', enterAll);
+    mega.addEventListener('mouseleave', leaveAll);
+  }
+  
+  // Initialize scroll handlers
+  window.addEventListener('scroll', handleMobileHeaderScroll);
+  window.addEventListener('scroll', handleDesktopHeaderScroll);
+});
+
+// Close mega menu on outside click
+document.addEventListener('click', function(event) {
+  const desktopMenu = document.getElementById('desktopMenu');
+  if (desktopMenu && !desktopMenu.contains(event.target) && !event.target.closest('[data-mega-trigger]')) {
+    closeMega();
+  }
+});
+
+// Close menus on escape key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeMega();
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenu && mobileMenu.classList.contains('active')) {
+      toggleMobileMenu();
+    }
+  }
+});
+
+
+
+
+// Utility to show exactly one .overlay-level at a time
+function showMobileLevel(selector) {
+  document.querySelectorAll('#mobileMenu .overlay-level').forEach(el => el.classList.remove('active'));
+  const target = document.querySelector(selector);
+  if (target) target.classList.add('active');
+}
+
+function toggleMobileMenu() {
+  const mobileMenu = document.getElementById('mobileMenu');
+  const isOpen = mobileMenu.classList.toggle('active');
+  mobileMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+
+  // Always reset to Level 1 on open
+  if (isOpen) showMobileLevel('#mobileLevel1');
+}
+
+// LEVEL transitions
+function openMobileLevel2(group) {
+  const id = '#mobileLevel2-' + group.toLowerCase().replace(/[^a-z0-9]+/g,'-');
+  showMobileLevel(id);
+}
+
+function openMobileLevel3(groupHandle, colId) {
+  const id = '#mobileLevel3-' + groupHandle + '-' + colId;
+  showMobileLevel(id);
+}
+
+function backToLevel1() {
+  showMobileLevel('#mobileLevel1');
+}
+
+function backToLevel2(groupHandle) {
+  showMobileLevel('#mobileLevel2-' + groupHandle);
+}
+function openMobileLevel2(group) {
+  document.querySelector('#mobileLevel1').classList.remove('active');
+  document.querySelector('#mobileLevel2-' + group.toLowerCase().replace(/\s+/g,'-')).classList.add('active');
+  document.getElementById('mobileMenuTitle').innerText = group;
+  document.getElementById('mobileBackBtn').setAttribute('onclick',"backToLevel1()");
+}
+
+function backToLevel1() {
+  document.querySelectorAll('.overlay-level').forEach(el => el.classList.remove('active'));
+  document.querySelector('#mobileLevel1').classList.add('active');
+  document.getElementById('mobileMenuTitle').innerText = 'MENU';
+}
+
+function openMobileLevel3(group, blockId) {
+  document.querySelector('#mobileLevel2-' + group).classList.remove('active');
+  document.querySelector('#mobileLevel3-' + group + '-' + blockId).classList.add('active');
+
+  // Title handling
+  let blockEl = document.querySelector('#mobileLevel3-' + group + '-' + blockId);
+  let newTitle = blockEl.querySelector('h3')?.innerText 
+              || blockEl.querySelector('.overlay-bar__title')?.innerText 
+              || 'Collection All';
+  document.getElementById('mobileMenuTitle').innerText = newTitle;
+
+  document.getElementById('mobileBackBtn').setAttribute('onclick',"backToLevel2('" + group + "')");
+}
+
+function backToLevel2(group) {
+  document.querySelectorAll('.overlay-level').forEach(el => el.classList.remove('active'));
+  document.querySelector('#mobileLevel2-' + group).classList.add('active');
+  document.getElementById('mobileMenuTitle').innerText = group;
+}
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const nav = document.getElementById('desktopNav');
+  const mega = document.getElementById('desktopMenu');
+  let hoverTimer;
+
+  if (nav && mega) {
+    // Open on nav hover
+    nav.querySelectorAll('[data-mega-trigger]').forEach(link => {
+      const key = link.getAttribute('data-mega-trigger');
+      link.addEventListener('mouseenter', () => {
+        clearTimeout(hoverTimer);
+        openMega(key);
+      });
+      link.addEventListener('focus', () => openMega(key));
+    });
+
+    const cancelClose = () => clearTimeout(hoverTimer);
+
+    const scheduleClose = (e) => {
+      const to = e.relatedTarget;
+      if (to && (nav.contains(to) || mega.contains(to))) {
+        // Cursor moved into nav or dropdown → keep open
+        return;
+      }
+      hoverTimer = setTimeout(closeMega, 200);
+    };
+
+    // Keep open when hovering nav or dropdown
+    nav.addEventListener('mouseenter', cancelClose);
+    mega.addEventListener('mouseenter', cancelClose);
+
+    // Only close when leaving both nav and dropdown
+    nav.addEventListener('mouseleave', scheduleClose);
+    mega.addEventListener('mouseleave', scheduleClose);
+  }
+});
+
+
+
+
+</script>
+
+{% schema %}
+{
+  "name": "Guerlain Header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo Image"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo Text (fallback)",
+      "default": "SENTRIO"
+    },
+    {
+      "type": "header",
+      "content": "Top Navigation"
+    },
+    {
+      "type": "text",
+      "id": "international_text",
+      "label": "International Text",
+      "default": "INTERNATIONAL"
+    },
+    {
+      "type": "text",
+      "id": "language_code",
+      "label": "Language Code",
+      "default": "EN"
+    },
+    {
+      "type": "text",
+      "id": "contact_text",
+      "label": "Contact Text",
+      "default": "CONTACT US"
+    },
+    {
+      "type": "url",
+      "id": "contact_link",
+      "label": "Contact Link"
+    },
+    {
+      "type": "text",
+      "id": "services_text",
+      "label": "Services Text",
+      "default": "SERVICES"
+    },
+    {
+      "type": "url",
+      "id": "services_link",
+      "label": "Services Link"
+    },
+    {
+      "type": "header",
+      "content": "Search"
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Search Placeholder",
+      "default": "SEARCH"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Navigation"
+    },
+    {
+      "type": "text",
+      "id": "nav1_label",
+      "label": "Navigation 1 Label",
+      "default": "ENTDECKEN"
+    },
+    {
+      "type": "url",
+      "id": "nav1_url",
+      "label": "Navigation 1 URL"
+    },
+    {
+      "type": "text",
+      "id": "nav2_label",
+      "label": "Navigation 2 Label",
+      "default": "DUFTKERZEN"
+    },
+    {
+      "type": "url",
+      "id": "nav2_url",
+      "label": "Navigation 2 URL"
+    },
+    {
+      "type": "text",
+      "id": "nav3_label",
+      "label": "Navigation 3 Label",
+      "default": "RAUMDUFTE"
+    },
+    {
+      "type": "url",
+      "id": "nav3_url",
+      "label": "Navigation 3 URL"
+    },
+    {
+      "type": "text",
+      "id": "nav4_label",
+      "label": "Navigation 4 Label",
+      "default": "PFLEGE"
+    },
+    {
+      "type": "url",
+      "id": "nav4_url",
+      "label": "Navigation 4 URL"
+    },
+    {
+      "type": "text",
+      "id": "nav5_label",
+      "label": "Navigation 5 Label",
+      "default": "GESCHENKE"
+    },
+    {
+      "type": "url",
+      "id": "nav5_url",
+      "label": "Navigation 5 URL"
+    },
+    {
+      "type": "text",
+      "id": "nav6_label",
+      "label": "Navigation 6 Label",
+      "default": "B2B PROFESSIONALS"
+    },
+    {
+      "type": "url",
+      "id": "nav6_url",
+      "label": "Navigation 6 URL"
+    },
+    {
+      "type": "text",
+      "id": "nav7_label",
+      "label": "Navigation 7 Label",
+      "default": "SENTRIO"
+    },
+    {
+      "type": "url",
+      "id": "nav7_url",
+      "label": "Navigation 7 URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feat",
+      "name": "Mega Featured",
+      "settings": [
+        {
+          "type": "select",
+          "id": "menu_group",
+          "label": "Attach to",
+          "default": "Duftkerzen",
+          "options": [
+            { "value": "Entdecken", "label": "Entdecken" },
+            { "value": "Duftkerzen", "label": "DUFTKERZEN" },
+            { "value": "Raumdufte", "label": "RAUMDUFTE" },
+            { "value": "Pflege", "label": "Pflege" },
+            { "value": "Geschenke", "label": "Geschenke" },
+            { "value": "B2B Professionals", "label": "B2B Professionals" },
+            { "value": "Sentrio", "label": "Sentrio" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "primary_heading",
+          "label": "Primary heading",
+          "default": "FEATURED"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "desc_text",
+          "label": "Description text"
+        },
+        {
+          "type": "text",
+          "id": "secondary_heading",
+          "label": "Secondary heading",
+          "default": "EXCLUSIVE COLLECTION"
+        },
+        {
+          "type": "text",
+          "id": "link1_label",
+          "label": "Link 1 label"
+        },
+        {
+          "type": "url",
+          "id": "link1_url",
+          "label": "Link 1 URL"
+        },
+        {
+          "type": "text",
+          "id": "link2_label",
+          "label": "Link 2 label"
+        },
+        {
+          "type": "url",
+          "id": "link2_url",
+          "label": "Link 2 URL"
+        },
+        {
+          "type": "text",
+          "id": "link3_label",
+          "label": "Link 3 label"
+        },
+        {
+          "type": "url",
+          "id": "link3_url",
+          "label": "Link 3 URL"
+        }
+      ]
+    },
+    {
+      "type": "col",
+      "name": "Mega Column",
+      "settings": [
+        {
+          "type": "select",
+          "id": "menu_group",
+          "label": "Attach to",
+          "default": "Duftkerzen",
+          "options": [
+            { "value": "Entdecken", "label": "Entdecken" },
+            { "value": "Duftkerzen", "label": "DUFTKERZEN" },
+            { "value": "Raumdufte", "label": "RAUMDUFTE" },
+            { "value": "Pflege", "label": "pflege" },
+            { "value": "Geschenke", "label": "Geschenke" },
+            { "value": "B2B Professionals", "label": "B2B Professionals" },
+            { "value": "Sentrio", "label": "Sentrio" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Column title",
+          "default": "By Collection"
+        },
+        {
+          "type": "text",
+          "id": "link1_label",
+          "label": "Link 1 label"
+        },
+        {
+          "type": "url",
+          "id": "link1_url",
+          "label": "Link 1 URL"
+        },
+        {
+          "type": "text",
+          "id": "link2_label",
+          "label": "Link 2 label"
+        },
+        {
+          "type": "url",
+          "id": "link2_url",
+          "label": "Link 2 URL"
+        },
+        {
+          "type": "text",
+          "id": "link3_label",
+          "label": "Link 3 label"
+        },
+        {
+          "type": "url",
+          "id": "link3_url",
+          "label": "Link 3 URL"
+        },
+        {
+          "type": "text",
+          "id": "link4_label",
+          "label": "Link 4 label"
+        },
+        {
+          "type": "url",
+          "id": "link4_url",
+          "label": "Link 4 URL"
+        },
+        {
+          "type": "text",
+          "id": "link5_label",
+          "label": "Link 5 label"
+        },
+        {
+          "type": "url",
+          "id": "link5_url",
+          "label": "Link 5 URL"
+        },
+         {
+          "type": "text",
+          "id": "title2",
+          "label": "Column title2",
+          "default": "By Collection"
+        },
+        {
+          "type": "text",
+          "id": "link6_label",
+          "label": "Link 6 label"
+        },
+        {
+          "type": "url",
+          "id": "link6_url",
+          "label": "Link 6 URL"
+        },
+        {
+          "type": "text",
+          "id": "link7_label",
+          "label": "Link 7 label"
+        },
+        {
+          "type": "url",
+          "id": "link7_url",
+          "label": "Link 7 URL"
+        },
+        {
+          "type": "text",
+          "id": "title3",
+          "label": "Column title3",
+          "default": "By Collection"
+        },
+        {
+          "type": "text",
+          "id": "link8_label",
+          "label": "Link 8 label"
+        },
+        {
+          "type": "url",
+          "id": "link8_url",
+          "label": "Link 8 URL"
+        },
+        {
+          "type": "text",
+          "id": "link9_label",
+          "label": "Link 9 label"
+        },
+        {
+          "type": "url",
+          "id": "link9_url",
+          "label": "Link 9 URL"
+        },
+        {
+          "type": "text",
+          "id": "link10_label",
+          "label": "Link 10 label"
+        },
+        {
+          "type": "url",
+          "id": "link10_url",
+          "label": "Link 10 URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Guerlain Header"
+    }
+  ]
+}
+{% endschema %}
